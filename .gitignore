@@ -1,0 +1,11 @@
+# Folders
+/.vs
+/output
+/temp
+
+
+# Files
+*.ilk
+*.pdb
+*.tmp
+*.vcxproj.user

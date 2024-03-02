@@ -1,0 +1,8 @@
+[SearchableFiles.include]
+*
+
+[SourceExplorer.ignore]
+.vs/
+.git/
+output/
+temp/
