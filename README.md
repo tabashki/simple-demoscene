@@ -7,13 +7,13 @@ This repo contains a simple Win32 demoscene starter project that can be compiled
 Project Structure
 -----------------
 
-All the source code for the project is contained within the `/src/` directory, and can be compiled using the `simple-demoscene.sln` Visual Studio 2022 solution provided. External tools such as `crinkler` and `yasm` are provided in the `/extern/` directory, and have been setup to work with the Visual Studio project.
+All the source code for the project is contained within the `/src/` directory, and can be compiled using the `simple-demoscene.sln` Visual Studio 2022 solution provided. External tools such as `crinkler` and `yasm` are provided in the `/extern/` directory, and have been setup to work out-of-the box with Visual Studio.
 
 
 ⚠️ Anti-Virus Warning ⚠️
 -------------------------
 
-A lot of virus developers use similar executable comrpessiona and packing techniques to avoid detection from the various anti-virus solutions out there. At some point one or more trojan devvelopers decided to use Crinkler to pack their executables, which has unfortunately caused the unpacking runtime that every Crinkled executable shares to be permanently flagged in the databases of various anti-virus vendors.
+A lot of virus developers use similar executable compression and packing tools to avoid detection from various anti-virus software. At some point one or more trojan devvelopers decided to use Crinkler to pack their malware, which has unfortunately caused the unpacking runtime shared between every Crinkled executable to be permanently flagged in the databases of various anti-virus vendors.
 
 Basically, don't be surprised if your `Crinkled` demoscene executable is immediately flagged as malicious after compiling. Apart from adding manual exclusions, so far I haven't seen a better way around this false-positive.
 
@@ -23,16 +23,17 @@ Build Configurations
 
 ### Debug
 - No optimizations, ideal for development
-- Includes asserts, extra cleanup code useful for catching bugs
+- Includes asserts and extra cleanup code useful for catching bugs
 - Uses the standard MSVC linker
 
 ### Release
-- Full optimizations, as close as possible to the final compressed executable
+- Full optimizations, as close as possible to the final compressed executable while still allowing for fairly quick iteration
 - No asserts or cleanup code is compiled in
 - Uses the standard MSVC linker
 
 ### Crinkled
 - Same as `Release` but instead uses the `Crinkler` compressing linker
+- Expect a long delay on startup as the executable unpacks itself
 
 
 Rendering
